@@ -16,11 +16,6 @@ class ControlPanel(val driver: WebDriver) {
     @FindBy(css = "href='/admin/blog/entry/add/'") // Поиск кнопки addEntries
     var addEntriesButton: WebElement? = null
 
-    // Проверка заголовка на соответствие
-    fun checkTitle(elementToCheck: String): Boolean {
-        return title!!.text == elementToCheck
-    }
-
     // Нажатие на addEntries
     fun clickAddEntriesButton() {
         addEntriesButton!!.click()

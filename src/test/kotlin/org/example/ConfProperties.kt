@@ -10,6 +10,6 @@ class ConfProperties(val fileInputStream: FileInputStream =
         properties.load(fileInputStream)
     }
 
-    fun getProperties(key: String): String { return properties.getProperty(key) }
+    fun getProperty(key: String): String { return properties.getProperty(key) }
 
 }
