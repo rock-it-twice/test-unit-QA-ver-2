@@ -13,7 +13,7 @@ class ControlPanel(val driver: WebDriver) {
 
     @FindBy(css = "div#content h1") // Поиск заголовка
     var title: WebElement? = null
-    @FindBy(css = "href='/admin/blog/entry/add/'") // Поиск кнопки addEntries
+    @FindBy(css = "[href='/admin/blog/entry/add/']") // Поиск кнопки addEntries
     var addEntriesButton: WebElement? = null
 
     // Нажатие на addEntries

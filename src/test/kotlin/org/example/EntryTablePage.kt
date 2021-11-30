@@ -32,7 +32,6 @@ class EntryTablePage(val driver: WebDriver) {
         deleteDrop!!.click()
         doActionButton!!.click()
         confirmActionButton!!.click()
-        driver.close()
     }
 
 

@@ -56,16 +56,15 @@ class Test() {
         Assert.assertEquals(exp2, actual2)
 
         // Заполнение полей и создание записи
-        val randomNumber = (0..9999999999).random().toString()
-        val myEntry = listOf("title", "slug", "textMarkdown", "text")
-        myEntry.forEach { it + randomNumber }
+        val randNum = (0..9999999999).random().toString()
+        val myEntry = listOf("title$randNum", "slug$randNum", "textMarkdown$randNum", "text$randNum")
         addEntryPage.makeEntry(myEntry)
 
         // Проверка, что запись появилась на сайте
         blogPage.driver.get(ConfProperties().getProperty("blogAddress"))
         val actual3 = blogPage.findEntry(myEntry)
         Assert.assertEquals(myEntry[0], actual3)
-        blogPage.driver.close()
+        blogPage.driver.navigate().back()
 
         // Удаляет запись
         entryTablePage.deleteEntry(myEntry)
