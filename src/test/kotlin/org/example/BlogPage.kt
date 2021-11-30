@@ -6,15 +6,8 @@ import org.openqa.selenium.support.PageFactory
 
 class BlogPage(val driver: WebDriver) {
 
-    fun findNote(note: List<String>): Boolean {
-        try {
-            driver.findElement( By.xpath("//a[text()='${note[0]}']") )
-            return true
-        } catch (e: org.openqa.selenium.NoSuchElementException){
-            return false
-        } finally {
-            driver.close()
+    fun findEntry(note: List<String>): String {
+        val title = driver.findElement( By.xpath("//a[text()='${note[0]}']") ).text
+        return title
         }
     }
-
-}

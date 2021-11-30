@@ -12,6 +12,9 @@ class AddEntryPage(val driver: WebDriver) {
         PageFactory.initElements(driver, this)
     }
 
+    // Инициализация заголовка
+    @FindBy(css = "div#content h1")
+    var title: WebElement? = null
     // Инициализация полей
     @FindBy(css = "[id='id_title']")
     var titleField: WebElement? = null
