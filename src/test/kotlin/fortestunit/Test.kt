@@ -1,4 +1,4 @@
-package org.example
+package fortestunit
 
 import org.junit.Assert
 import org.junit.BeforeClass
@@ -23,6 +23,8 @@ class Test() {
             System.setProperty("webdriver.chrome.driver", ConfProperties().getProperty("chromedriver"))
         }
     }
+
+
 
     init {
         // Развертывание окна на полный экран
@@ -68,5 +70,7 @@ class Test() {
 
         // Удаляет запись
         entryTablePage.deleteEntry(myEntry)
+        // Закрывает браузер
+        entryTablePage.driver.close()
     }
 }
